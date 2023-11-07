@@ -1,0 +1,12 @@
+#mainForm {
+	width: 16vw;
+	height: 28vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: aliceblue;
+}
+
+#mainForm div {
+	margin-top: 1vh;
+}

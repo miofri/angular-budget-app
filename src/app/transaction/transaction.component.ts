@@ -17,8 +17,8 @@ export class TransactionComponent {
 		type: <Transaction['type']>'income',
 	});
 
+	// @Input() transactionType: Transaction['type'] | undefined;
 	@Output() onTransactionAdded = new EventEmitter();
-	@Input() transactionType: Transaction['type'] | undefined;
 
 	addTransaction() {
 		if (this.transactionForm.get('title')?.value) {

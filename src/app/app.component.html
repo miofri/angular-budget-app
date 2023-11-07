@@ -1,1 +1,11 @@
-<app-transaction></app-transaction>
+<div class="container">
+  <div class="transaction">
+    <app-transaction></app-transaction>
+  </div>
+  <div class="balance">
+    <app-balance [currentBalance]="currentBalance"></app-balance>
+  </div>
+  <div class="saving">
+    <app-saving [savingAmount]="savingAmount"></app-saving>
+  </div>
+</div>

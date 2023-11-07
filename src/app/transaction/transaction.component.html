@@ -1,4 +1,4 @@
-<div>
+<div id="mainForm">
 	<form [formGroup]="transactionForm" (ngSubmit)="addTransaction()" >
 		<div>
 			<label for="title">Title</label>
@@ -13,7 +13,7 @@
 		</div>
 		<div>
 			<label for="amount">Amount</label>
-			<input type="number" min="1" step="any" formControlName="amount">
+			<input type="number" min="0.01" step="any" formControlName="amount">
 		</div>
 		<button class="button" type="submit">Submit</button>
 		</form>
