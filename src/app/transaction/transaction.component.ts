@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Transaction } from './transaction.model';
 
 @Component({
@@ -7,22 +8,23 @@ import { Transaction } from './transaction.model';
 	styleUrls: ['./transaction.component.css'],
 })
 export class TransactionComponent {
+	constructor(private formBuilder: FormBuilder) {}
+
 	transaction: Transaction | undefined;
+	transactionForm = this.formBuilder.group({
+		amount: 0,
+		title: '',
+		type: <Transaction['type']>'income',
+	});
 
 	@Output() onTransactionAdded = new EventEmitter();
 	@Input() transactionType: Transaction['type'] | undefined;
 
-	addTransaction(amount: number, title: string) {
-		if (
-			this.transactionType === 'income' ||
-			this.transactionType === 'expense'
-		) {
-			const newTransaction: Transaction = {
-				amount: amount,
-				title: title,
-				type: this.transactionType,
-			};
-			this.onTransactionAdded.emit(newTransaction);
-		} else console.error('Invalid transaction type!');
+	addTransaction() {
+		if (this.transactionForm.get('title')?.value) {
+			this.onTransactionAdded.emit(this.transactionForm.value);
+		} else {
+			window.alert('Please enter a title.');
+		}
 	}
 }

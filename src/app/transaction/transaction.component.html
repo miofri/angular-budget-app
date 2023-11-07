@@ -1,1 +1,20 @@
-<p>transaction works!</p>
+<div>
+	<form [formGroup]="transactionForm" (ngSubmit)="addTransaction()" >
+		<div>
+			<label for="title">Title</label>
+			<input id="title" type="text" formControlName="title">
+		</div>
+		<div>
+			<label for="type">Type</label>
+			<select name="type" id="type" formControlName="type">
+				<option value="income">Income</option>
+				<option value="expense">Expense</option>
+			</select>
+		</div>
+		<div>
+			<label for="amount">Amount</label>
+			<input type="number" min="1" step="any" formControlName="amount">
+		</div>
+		<button class="button" type="submit">Submit</button>
+		</form>
+</div>
