@@ -1,11 +1,11 @@
 <div class="container">
   <div class="transaction">
-    <app-transaction></app-transaction>
+    <app-transaction (onTransactionAdded)="handleAddTransaction($event)"></app-transaction>
   </div>
   <div class="balance">
-    <app-balance [currentBalance]="currentBalance"></app-balance>
+    <app-balance [currentBalance]="currentBalance" (onTransferToSaving)="handleTransferToSaving($event)"></app-balance>
   </div>
   <div class="saving">
-    <app-saving [savingAmount]="savingAmount"></app-saving>
+    <app-saving [savingAmount]="savingAmount" (onTransferToBalance)="handleTransferToBalance($event)"></app-saving>
   </div>
 </div>

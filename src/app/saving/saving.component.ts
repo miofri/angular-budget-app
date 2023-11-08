@@ -12,14 +12,12 @@ export class SavingComponent {
 	progressValue: number = 0;
 	targetAmount: number = 0;
 	transferForm = this.formBuilder.group({
-		amount: <number>0,
+		amount: <number>1,
 	});
 	@Input() savingAmount: number | undefined;
-	@Output() onTransferToSaving = new EventEmitter();
+	@Output() onTransferToBalance = new EventEmitter();
 
 	updateProgressValue() {
-		console.log(this.targetAmount);
-
 		this.progressValue = (this.savingAmount! / this.targetAmount) * 100;
 	}
 	setTarget(amount: number) {
@@ -32,7 +30,7 @@ export class SavingComponent {
 			this.transferForm.value.amount! > 0 &&
 			this.savingAmount - this.transferForm.value.amount! > 0
 		) {
-			this.onTransferToSaving.emit(this.transferForm.value.amount);
+			this.onTransferToBalance.emit(this.transferForm.value.amount);
 		} else {
 			console.error('Invalid transfer amount!');
 		}

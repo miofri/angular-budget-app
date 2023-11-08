@@ -1,7 +1,7 @@
 export interface Transaction {
-	amount: number;
-	type: 'income' | 'expense';
-	title: string;
+	amount?: number | undefined | null;
+	type?: 'income' | 'expense' | undefined | null;
+	title?: string | null | undefined;
 }
 
 export interface TransactionType {

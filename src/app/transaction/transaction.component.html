@@ -17,4 +17,13 @@
 		</div>
 		<button class="button" type="submit">Submit</button>
 		</form>
+		<div>
+		<h4>Transactions:</h4>
+		<div *ngFor="let transactions of transaction">
+			<h5>{{transactions.title}}</h5>
+			<p>Type: {{transactions.type}}</p>
+			<p>Amount: {{transactions.amount}}</p>
+		</div>
+		</div>
+
 </div>

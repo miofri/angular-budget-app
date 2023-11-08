@@ -1,2 +1,9 @@
 <h4>Current Balance</h4>
 <h5>{{currentBalance}}</h5>
+<div>
+	<form (ngSubmit)="transferToSavings()" [formGroup]="transferForm">
+	<label for="amount">Transfer amount to balance:</label>
+	<input type="number" min="1" step="0.5" placeholder="10" [(ngModel)]="amountToTransfer">
+	<button type="submit">Submit</button>
+</form>
+</div>
