@@ -68,6 +68,30 @@ h1 {
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+@media only screen and (max-width: 600px) {
+	.transactionHistory {
+		overflow: visible;
+		height: auto;
+	}
+	.container {
+		height: fit-content;
+	}
+	.innerContainer {
+		flex-direction: column;
+		width: 80vw;
+		gap: 1vh;
+	}
+	.innerContainer div {
+		min-width: 50vw;
+		min-height: 40vh;
+	}
+
+	.transactionHistory {
+		min-height: 40vh;
+		width: 50vw;
+	}
+}
+
 @media only screen and (min-width: 600px) {
 	.transactionHistory {
 		overflow: visible;
