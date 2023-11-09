@@ -78,17 +78,21 @@ h1 {
 	}
 	.innerContainer {
 		flex-direction: column;
-		width: 80vw;
+		width: 99vw;
+		height: auto;
 		gap: 1vh;
 	}
 	.innerContainer div {
 		min-width: 50vw;
 		min-height: 40vh;
+		height: 60vh;
+		width: 80vw;
+		padding: 2vh;
 	}
 
 	.transactionHistory {
 		min-height: 40vh;
-		width: 50vw;
+		width: 73vw;
 	}
 }
 
