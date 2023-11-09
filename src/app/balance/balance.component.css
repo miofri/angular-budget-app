@@ -1,0 +1,31 @@
+h5 {
+	font-size: xx-large;
+}
+
+.mainForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: aliceblue;
+	border-radius: 5%;
+	height: 100%;
+}
+
+button {
+	width: fit-content;
+}
+
+.mainForm div {
+	margin-top: 1vh;
+}
+
+.button-container {
+	text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+	.mainForm {
+		width: 100%;
+	}
+}

@@ -10,7 +10,6 @@ import { Transaction } from './transaction.model';
 export class TransactionComponent {
 	constructor(private formBuilder: FormBuilder) {}
 
-	transaction: Transaction[] | undefined = [];
 	transactionForm = this.formBuilder.group({
 		amount: [0],
 		title: '',
@@ -20,12 +19,15 @@ export class TransactionComponent {
 	@Output() onTransactionAdded = new EventEmitter();
 
 	addTransaction() {
-		if (this.transactionForm.get('title')?.value) {
+		if (
+			(this.transactionForm.get('title')?.value &&
+				this.transactionForm.get('type')?.value === 'income') ||
+			this.transactionForm.get('type')?.value === 'expense'
+		) {
 			this.onTransactionAdded.emit(this.transactionForm.value);
-			this.transaction?.push(this.transactionForm.value);
 			this.transactionForm.reset();
 		} else {
-			window.alert('Please enter a title.');
+			window.alert('Please make sure that all fields are filled!');
 		}
 	}
 }

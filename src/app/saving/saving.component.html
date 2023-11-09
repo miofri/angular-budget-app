@@ -1,16 +1,24 @@
-<div>
+<div class="mainForm">
 	<h4>Current Savings</h4>
-	<p>{{savingAmount}}</p>
+	<p class="savingAmt">{{savingAmount}}</p>
 	<form (ngSubmit)="transferToBalance()" [formGroup]="transferForm">
-		<label for="amount">Transfer amount to balance:</label>
-		<input type="number" min="1" step="0.5" placeholder="10" formControlName="amount" >
-		<button type="submit">Submit</button>
+		<div>
+			<label for="amount">Transfer amount to balance:</label>
+			<input type="number" min="1" step="0.5" placeholder="10"
+				formControlName="amount">
+		</div>
+		<div class="button-container">
+			<button class="button" type="submit">Submit</button>
+		</div>
 	</form>
-	<h4>Set savings target:</h4>
-	<input type="number" [(ngModel)]="targetAmount" (change)="updateProgressValue()">
-<!-- <mat-slider [max]="10000" [min]="1">
+	<section>
+		<p>Set savings target:</p>
+		<input type="number" [(ngModel)]="targetAmount"
+			(change)="updateProgressValue()">
+		<!-- <mat-slider [max]="10000" [min]="1">
 	<input matSliderThumb [(ngModel)]="sliderValue" #slider>
 </mat-slider> -->
-<mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
-<span>{{ progressValue }}%</span> <!-- Display the percentage -->
+		<mat-progress-bar id="progBar" mode="determinate" [value]="progressValue"></mat-progress-bar>
+		<span>{{ progressValue }}%</span> <!-- Display the percentage -->
+	</section>
 </div>

@@ -1,3 +1,38 @@
-body {
+.mainForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: aliceblue;
+	border-radius: 5%;
+	height: 100%;
+}
+
+.mainForm div {
+	margin-top: 1vh;
+}
+
+h5 {
+	font-size: xx-large;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2vh;
+	gap: 0.5vh;
+}
+
+.savingAmt {
+	font-size: xx-large;
+}
+.button-container {
+	text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+	.mainForm {
+		width: 100%;
+	}
 }

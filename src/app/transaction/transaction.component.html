@@ -1,5 +1,6 @@
-<div id="mainForm">
-	<form [formGroup]="transactionForm" (ngSubmit)="addTransaction()" >
+<div class="mainForm">
+	<h3>Create a transaction</h3>
+	<form [formGroup]="transactionForm" (ngSubmit)="addTransaction()">
 		<div>
 			<label for="title">Title</label>
 			<input id="title" type="text" formControlName="title">
@@ -15,15 +16,8 @@
 			<label for="amount">Amount</label>
 			<input type="number" min="0.01" step="any" formControlName="amount">
 		</div>
-		<button class="button" type="submit">Submit</button>
-		</form>
-		<div>
-		<h4>Transactions:</h4>
-		<div *ngFor="let transactions of transaction">
-			<h5>{{transactions.title}}</h5>
-			<p>Type: {{transactions.type}}</p>
-			<p>Amount: {{transactions.amount}}</p>
+		<div class="button-container">
+			<button class="button" type="submit">Submit</button>
 		</div>
-		</div>
-
+	</form>
 </div>

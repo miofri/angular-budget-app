@@ -1,12 +1,25 @@
-#mainForm {
-	width: 16vw;
-	height: 28vh;
+h3 {
+	font-size: large;
+}
+.mainForm {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	border-radius: 5%;
 	background-color: aliceblue;
+	height: 100%;
 }
 
-#mainForm div {
+.mainForm div {
 	margin-top: 1vh;
+}
+.button-container {
+	text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+	.mainForm {
+		width: 100%;
+	}
 }

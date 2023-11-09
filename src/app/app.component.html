@@ -1,11 +1,26 @@
 <div class="container">
-  <div class="transaction">
-    <app-transaction (onTransactionAdded)="handleAddTransaction($event)"></app-transaction>
+  <h1>Balance sheet</h1>
+  <div class="innerContainer">
+    <div class="transaction">
+      <app-transaction (onTransactionAdded)="handleAddTransaction($event)"></app-transaction>
+    </div>
+    <div class="balance">
+      <app-balance [currentBalance]="currentBalance"
+        (onTransferToSaving)="handleTransferToSaving($event)"></app-balance>
+    </div>
+    <div class="saving">
+      <app-saving [savingAmount]="savingAmount"
+        (onTransferToBalance)="handleTransferToBalance($event)"></app-saving>
+    </div>
   </div>
-  <div class="balance">
-    <app-balance [currentBalance]="currentBalance" (onTransferToSaving)="handleTransferToSaving($event)"></app-balance>
-  </div>
-  <div class="saving">
-    <app-saving [savingAmount]="savingAmount" (onTransferToBalance)="handleTransferToBalance($event)"></app-saving>
+  <div class="transactionHistory">
+    <h3>Transactions:</h3>
+    <div class="transactionContainer">
+      <div class="transactionItems" *ngFor="let transaction of transactions">
+        <h4>{{transaction.title}}</h4>
+        <p>Type: {{transaction.type}}</p>
+        <p>Amount: {{transaction.amount}}</p>
+      </div>
+    </div>
   </div>
 </div>
