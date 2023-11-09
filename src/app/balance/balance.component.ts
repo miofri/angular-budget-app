@@ -9,7 +9,6 @@ import { FormBuilder } from '@angular/forms';
 export class BalanceComponent {
 	constructor(private formBuilder: FormBuilder) {}
 
-	amountToTransfer: number = 1;
 	transferForm = this.formBuilder.group({
 		amount: <number>0,
 	});
