@@ -12,7 +12,7 @@ export class SavingComponent {
 	progressValue: number = 0;
 	targetAmount: number = 0;
 	transferForm = this.formBuilder.group({
-		amount: <number>1,
+		amount: <number>0,
 	});
 	@Input() savingAmount: number | undefined;
 	@Output() onTransferToBalance = new EventEmitter();

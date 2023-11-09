@@ -5,7 +5,7 @@
 		<form (ngSubmit)="transferToSavings()" [formGroup]="transferForm">
 			<div>
 				<label for="amount">Transfer amount to savings:</label>
-				<input type="number" min="1" step="0.5" placeholder="10"
+				<input type="number" min="1" step="0.5"
 					[(ngModel)]="amountToTransfer">
 			</div>
 			<div class="button-container">

@@ -11,7 +11,7 @@ export class BalanceComponent {
 
 	amountToTransfer: number = 1;
 	transferForm = this.formBuilder.group({
-		amount: <number>1,
+		amount: <number>0,
 	});
 
 	@Input() currentBalance: number | undefined;
