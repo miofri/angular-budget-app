@@ -19,14 +19,12 @@ export class BalanceComponent {
 	transferToSavings() {
 		if (
 			this.currentBalance != undefined &&
-			this.transferForm.value.amount! > 0 &&
-			this.currentBalance - this.transferForm.value.amount! > 0
+			this.transferForm.value.amount! > -1 &&
+			this.currentBalance - this.transferForm.value.amount! > -1
 		) {
-			console.log('here');
-
 			this.onTransferToSaving.emit(this.transferForm.value.amount);
 		} else {
-			console.error(
+			window.alert(
 				'Invalid amount: balance will fall below 0 with this amount.'
 			);
 		}

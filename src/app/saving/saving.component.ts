@@ -27,12 +27,12 @@ export class SavingComponent {
 	transferToBalance() {
 		if (
 			this.savingAmount !== undefined &&
-			this.transferForm.value.amount! > 0 &&
-			this.savingAmount - this.transferForm.value.amount! > 0
+			this.transferForm.value.amount! > -1 &&
+			this.savingAmount - this.transferForm.value.amount! > -1
 		) {
 			this.onTransferToBalance.emit(this.transferForm.value.amount);
 		} else {
-			console.error('Invalid transfer amount!');
+			window.alert('Invalid transfer amount!');
 		}
 	}
 }
